@@ -5,9 +5,11 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  root 'dashboard#index'
+  root 'credentials#index'
 
-  get 'goals' => 'goal#index', as: 'goals'
+  post 'credentials#save' => 'credentials#save', as: 'credentials'
+
+  get 'goals' => 'goals#index', as: 'goals'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -46,4 +46,5 @@ group :development do
 end
 
 gem 'devise'
-gem 'byebug'
+
+gem 'jquery-ui-rails'
