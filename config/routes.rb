@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   post 'credentials#save' => 'credentials#save', as: 'credentials'
 
   get 'goals' => 'goals#index', as: 'goals'
+  get 'fetch_goals' => 'goals#fetch_goals', as: 'fetch_goals'
+  post 'goals/save' => 'goals#save', as: 'goal'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
