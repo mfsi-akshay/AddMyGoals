@@ -1,3 +1,4 @@
+<div id="error_message" style="color: red;display:none"></div>
 <div class="row">
 
       <div class="row">
@@ -9,7 +10,9 @@
 <div id="cont">
 
 </div>
+
       <div class="row" id="container" style="display:none">
+
         <div class="input-field col s6 offset-s3">
           <input placeholder="Placeholder" id="goal" type="text" class="validate">
           <label for="select_date">Goal for selected date</label>
@@ -26,7 +29,7 @@
         $.ajax({
           url:'/fetch_goal',
           contentType: "application/json; charset=utf-8",
-          data: {abc: date},
+          data: {date: date},
           success: function(){
           },
           error: function(){

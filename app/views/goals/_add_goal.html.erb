@@ -1,12 +1,11 @@
 <%= form_for(@goal, mehod: 'post', remote: true, path: :save) do  |f| %>
-  <%if @goal.errors.any? %>
-    <h2>Errors:</h2>
-  <% end %>
+
   <div class="row">
     <div class="input-field col s4 offset-s3">
       <%= f.text_field :goals, class: "validate" %>
       <label class="active">Goal</label>
     </div>
+    <%= f.hidden_field :date %>
     <div class="input-field col s4 offset-s3">
       <%= f.submit :save, class: "waves-effect waves-light btn" %>
     </div>
