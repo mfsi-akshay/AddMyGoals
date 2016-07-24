@@ -11,13 +11,13 @@
   <%= csrf_meta_tags %>
 </head>
 <body style="margin-left:1%; margin-right:1%">
-  <nav style="margin-bottom:5%">
+    <nav style="margin-bottom:5%">
       <div class="nav-wrapper" style="margin-left:1%">
         <a href="#" class="brand-logo">Add My Goals</a>
       </div>
     </nav>
     <% flash.each do |key, value| %>
-            <div class="alert alert-<%= key %>"><%= value %></div>
+      <%= content_tag :div, value, class: "flash #{key}" %>
     <% end %>
 <%= yield %>
 
