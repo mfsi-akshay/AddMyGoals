@@ -6,7 +6,7 @@ namespace :goals do
     active_users.each do |user|
       agent = Mechanize.new
       login_page = agent.get("http://www.ourgoalplan.com/Login.aspx")
-
+      
       login_form = login_page.form
       login_form.field_with(:name => "txtName").value = user.credential.username
       login_form.field_with(:name => "txtPassword").value = user.credential.password
@@ -16,6 +16,9 @@ namespace :goals do
       landing_page = login_form.submit(button)
       sleep 5.0
       gps_form = landing_page.form
+
+      next unless gps_form.field_with(:name => "ucAddGoal$txtAddGoal").present?
+
       #Add Goals here!
 
       gps_form.field_with(:name => "ucAddGoal$txtAddGoal").value = user.goals.first.body
