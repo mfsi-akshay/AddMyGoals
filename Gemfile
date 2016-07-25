@@ -48,3 +48,5 @@ end
 gem 'devise'
 
 gem 'jquery-ui-rails'
+gem 'whenever', require: false
+gem 'mechanize'
