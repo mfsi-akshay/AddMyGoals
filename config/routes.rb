@@ -1,8 +1,4 @@
 Rails.application.routes.draw do
-  get 'goals/index'
-
-  get 'dashboard/index'
-
   devise_for :users
 
   root 'credentials#index'

@@ -5,16 +5,15 @@
 #   gem 'sqlite3'
 #
 default: &default
-  adapter: mysql2
+  adapter: postgresql
+  encoding: unicode
   pool: 5
-  encoding: utf8
-  reconnect: false
-  username: root
-  password: password
+
 
 development:
   <<: *default
-  database: add_my_goals_delevlopment
+  host: localhost
+  database: add_my_goals_development
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -22,7 +21,3 @@ development:
 test:
   <<: *default
   database: add_my_goals_test
-
-production:
-  <<: *default
-  database: add_my_goals_production

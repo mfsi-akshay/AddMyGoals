@@ -3,7 +3,7 @@ class CreateGoals < ActiveRecord::Migration
     create_table :goals do |t|
       t.integer :user_id
       t.text :goals
-      t.time :date
+      t.time :datetime
     end
   end
 end
