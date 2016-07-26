@@ -51,4 +51,4 @@ gem 'jquery-ui-rails'
 gem 'whenever', require: false
 gem 'mechanize'
 gem 'rails_12factor', group: :production
-ruby "2.1.1"
+ruby "2.3.1"
