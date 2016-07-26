@@ -1,6 +1,6 @@
 class Modify < ActiveRecord::Migration
   def change
-    remove_colunm :goals, :datetime
-    add_colunm :goals, :date, :datetime
+    remove_column :goals, :datetime
+    add_column :goals, :date, :datetime
   end
 end
