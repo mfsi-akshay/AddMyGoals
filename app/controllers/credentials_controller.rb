@@ -6,7 +6,10 @@ class CredentialsController < ApplicationController
   end
 
   def save
-    if @credential = current_user.create_credential(credential_params)
+    byebug
+    crypt = ActiveSupport::MessageEncryptor.new(Rails.application.secrets.secret_key_base)
+    encrypted_password = crypt.encrypt_and_sign(params[:credential][:password])
+    if @credential = current_user.create_credential(username: params[:credential][:username], password: encrypted_password)
       redirect_to goals_path
     else
       render :index
