@@ -9,9 +9,10 @@ namespace :goals do
       begin
         login_page = agent.get("http://www.ourgoalplan.com/Login.aspx")
       rescue => e
-        puts e
+        print e
         next
       end
+      print "Trying to loggin"
       login_form = login_page.form
       login_form.field_with(:name => "txtName").value = user.credential.username
 
