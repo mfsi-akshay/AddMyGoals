@@ -15,18 +15,18 @@ namespace :goals do
       print "Trying to loggin"
       login_form = login_page.form
       login_form.field_with(:name => "txtName").value = user.credential.username
-
+      print "\n #{user.credential.username}"
       crypt =  ActiveSupport::MessageEncryptor.new(Rails.application.secrets.secret_key_base)
       decrypted_pass = crypt.decrypt_and_verify(user.credential.password)
 
       login_form.field_with(:name => "txtPassword").value = decrypted_pass
 
       button = login_form.button_with(:name => "btnLogin")
-
+      print "About to login\n"
       landing_page = login_form.submit(button)
       sleep 5.0
       gps_form = landing_page.form
-
+      print "On home page\n"
       next unless gps_form.field_with(:name => "ucAddGoal$txtAddGoal").present?
       print "Logged in, adding goal now!"
       #Add Goals here!
