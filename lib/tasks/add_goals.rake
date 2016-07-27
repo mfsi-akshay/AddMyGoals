@@ -9,6 +9,7 @@ namespace :goals do
       begin
         login_page = agent.get("http://www.ourgoalplan.com/Login.aspx")
       rescue => e
+        puts e
         next
       end
       login_form = login_page.form
