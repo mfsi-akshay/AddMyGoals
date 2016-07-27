@@ -4,6 +4,7 @@ class GoalsController < ApplicationController
   end
 
   def create
+    puts "********************** #{params[:date]} *****************"
     goal = current_user.goals.new(:body => params[:goal][:body], date: Date.strptime(params[:date], "%m/%d/%Y"))
     respond_to do |format|
       if goal.save
