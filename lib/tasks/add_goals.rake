@@ -25,12 +25,18 @@ namespace :goals do
       print "About to login\n"
       landing_page = login_form.submit(button)
       sleep 5.0
-      gps_form = landing_page.form
-      print "On home page\n"
-      next unless gps_form.field_with(:name => "ucAddGoal$txtAddGoal").present?
-      print "Logged in, adding goal now!"
-      #Add Goals here!
 
+      gps_form = landing_page.form
+
+      if gps_form.field_with(:name => "ucAddGoal$txtAddGoal").present?
+        print "Login success!"
+      else
+        print "Unable to login!"
+        next
+      end
+
+      #Add Goals here!
+      print "Adding Goal now"
       gps_form.field_with(:name => "ucAddGoal$txtAddGoal").value = user.goals.first.body
       add_button = gps_form.button_with(:name => "ucAddGoal$btnAddGoal")
       gps_form.submit(add_button)
