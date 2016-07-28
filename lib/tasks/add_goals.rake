@@ -82,8 +82,10 @@ namespace :goals do
       end
 
       goal_id = target_span_id[/\d\d/]
+      print "#{goal_id}"
       checkfield_id = "dgGoals_ctl" + goal_id + "_chkStatus"
       checkfield = gps_form.checkbox_with(:id => checkfield_id)
+      print "Check found"
       next unless checkfield.present?
       checkfield.check
       update_form = agent.page.form_with(:name => "Form1")
