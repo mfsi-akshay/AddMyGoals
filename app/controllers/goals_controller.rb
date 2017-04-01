@@ -30,7 +30,7 @@ class GoalsController < ApplicationController
     end
   end
 
-  def fetch_goal
+  def fetch_goals
     @goal = current_user.goals.where(date: Date.strptime(params[:date], "%m/%d/%Y")).first_or_create
     respond_to do |format|
       format.js

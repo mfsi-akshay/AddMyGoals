@@ -27,7 +27,7 @@
       "minDate": "0",
       onSelect: function(date){
         $.ajax({
-          url:'/fetch_goal',
+          url:'/fetch_goals',
           contentType: "application/json; charset=utf-8",
           data: {date: date},
           success: function(){
