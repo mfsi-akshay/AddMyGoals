@@ -1,0 +1,5 @@
+$('#no-goals').remove();
+$('#user_goals tbody').append('<tr><td><%= @goal.body %></td><td></td></tr>')
+$('#goal_body').val('');
+toastr.info("Goal saved!");
+

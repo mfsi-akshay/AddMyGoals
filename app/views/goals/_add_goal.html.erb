@@ -1,3 +1,27 @@
+<div id="user_goals" class="row">
+  <div class="col s4 offset-s3">	
+    <table id="goals" class="table">
+      <thead>
+      <tr>
+        <td>Goal</td>
+        <td>Actions</td>	
+      </tr>
+    </thead>
+    <tbody>
+    <% if @goals.present? %>
+      <% @goals.each do |goal| %>
+        <tr>
+          <td><%= goal.body %></td>
+          <td></td>
+        </tr>
+      <% end %>
+    <% else %>
+      <tr id="no-goals"><td> <div><b>No goals added yet!</b></div></td></tr> 
+    <% end %>
+    </tbody>
+  </table>
+</div>
+</div>
 <%= form_for(@goal, mehod: 'post', remote: true, path: :save) do  |f| %>
 
   <div class="row">

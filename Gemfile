@@ -51,4 +51,5 @@ gem 'jquery-ui-rails'
 gem 'whenever', require: false
 gem 'mechanize'
 gem 'rails_12factor', group: :production
+gem 'toastr-rails'
 ruby "2.3.1"
