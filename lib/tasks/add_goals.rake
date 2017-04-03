@@ -37,7 +37,9 @@ namespace :goals do
 
       #Add Goals here!
       print "Adding Goal now"
-      gps_form.field_with(:name => "ucAddGoal$txtAddGoal").value = user.goals.first.body
+      user_goals = ""
+      user.goals.map {|goal| user_goals << "#{goal.body}\n" }
+      gps_form.field_with(:name => "ucAddGoal$txtAddGoal").value = user_goals
       add_button = gps_form.button_with(:name => "ucAddGoal$btnAddGoal")
       gps_form.submit(add_button)
       print "Everything done!"
